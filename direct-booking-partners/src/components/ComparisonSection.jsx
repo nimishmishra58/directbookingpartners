@@ -1,182 +1,134 @@
 // src/components/ComparisonSection.jsx
-import React, { useState } from "react";
+import React from "react";
 
 const ComparisonSection = () => {
-  const [selected, setSelected] = useState("airbnb"); // 'airbnb' | 'direct'
-
   return (
-    <section className="py-12 lg:py-16 bg-base-200 border-b border-base-300">
-      <div className="max-w-6xl mx-auto px-4 space-y-8">
-        {/* Section header */}
-        <div className="max-w-3xl space-y-3">
-          <p className="text-xs font-semibold uppercase text-base-content/60">
-            Why direct bookings matter
+    <section id="comparison" className="py-16 lg:py-24 bg-base-300 border-b border-base-300 scroll-mt-24">
+      <div className="max-w-6xl mx-auto px-4 space-y-12">
+        {/* Header */}
+        <div className="text-center space-y-4 max-w-3xl mx-auto">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-base-content/60">
+            Business Model Comparison
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold">
-            Two types of hosts. Only one truly owns their business.
+          <h2 className="text-3xl md:text-4xl font-bold">
+            “Airbnb-Only” Operator vs Direct Booking Brand
           </h2>
-          <p className="text-sm md:text-base text-base-content/70">
-            Most stays run everything through Airbnb or OTAs and feel &quot;fully
-            booked&quot;—but pay 15–20% in fees and own none of their guest data.
-            We help you move to the other side.
+          <p className="text-base text-base-content/70">
+            Same property. Same work. Two completely different profit and control models.
           </p>
         </div>
 
-        {/* Comparison + journey */}
-        <div className="grid lg:grid-cols-[1.1fr,1.2fr] gap-8 items-start">
-          {/* Left: Journey bar + explanation */}
-          <div className="space-y-5">
-            <div>
-              <div className="flex justify-between text-[11px] text-base-content/60 mb-1">
-                <span>Airbnb Only</span>
-                <span>Direct-First Brand</span>
+        {/* Cards row */}
+        <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-6 items-stretch">
+          {/* LEFT CARD – Airbnb Only */}
+          <div className="h-full flex">
+            <div className="relative flex-1 rounded-3xl bg-base-100 shadow-xl border border-base-300 p-6 md:p-7 flex flex-col gap-5 hover:shadow-2xl transition-shadow duration-300">
+              {/* Label pill */}
+              <div className="inline-flex items-center gap-2 rounded-full bg-base-200 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-base-content/60">
+                <span className="h-2 w-2 rounded-full bg-rose-400" />
+                <span>Before Direct Booking Partners</span>
               </div>
-              <div className="h-2 rounded-full bg-base-300 relative overflow-hidden">
-                <div
-                  className={`h-full rounded-full transition-all duration-500 ${
-                    selected === "airbnb"
-                      ? "w-1/3 bg-error"
-                      : "w-full bg-gradient-to-r from-primary to-success"
-                  }`}
-                />
+
+              {/* Title */}
+              <div className="space-y-1">
+                <h3 className="text-lg md:text-xl font-bold text-rose-500">
+                  “Airbnb-Only” Operator
+                </h3>
+                <p className="text-xs md:text-sm text-base-content/60">
+                  Relies completely on platforms that quietly control reach,
+                  pricing, and customer ownership.
+                </p>
+              </div>
+
+              {/* Bullet list */}
+              <ul className="list-disc list-inside space-y-2 text-sm text-base-content/80">
+                <li>Pays 15–20% in OTA platform fees.</li>
+                <li>Doesn’t own guest emails or audience.</li>
+                <li>Revenue vulnerable to algorithm shifts.</li>
+                <li>Forced to compete mainly on price.</li>
+              </ul>
+
+              {/* Profit bar */}
+              <div className="mt-auto pt-4 space-y-2">
+                <p className="text-xs font-semibold text-base-content/60">
+                  Profit kept on ₹1,00,000 in bookings
+                </p>
+                <div className="h-3 rounded-full bg-base-content/10 overflow-hidden">
+                  <div className="h-full w-[80%] bg-rose-400" />
+                </div>
+                <div className="flex justify-between text-[11px] text-base-content/60">
+                  <span>Actual profit retained</span>
+                  <span>≈ 80%</span>
+                </div>
               </div>
             </div>
-
-            <p className="text-sm text-base-content/70">
-              You don&apos;t need to leave Airbnb. You just need a{" "}
-              <span className="font-semibold">direct booking system</span> on
-              top of it, so your best guests come back to you — not just to the
-              platform.
-            </p>
-
-            <ul className="space-y-2 text-sm text-base-content/80">
-              <li className="flex gap-2">
-                <span className="badge badge-xs badge-outline mt-1" />
-                <span>
-                  We help you{" "}
-                  <span className="font-semibold">
-                    keep Airbnb for discovery
-                  </span>{" "}
-                  but build your{" "}
-                  <span className="font-semibold">own website, funnels and
-                  guest list</span>.
-                </span>
-              </li>
-              <li className="flex gap-2">
-                <span className="badge badge-xs badge-primary mt-1" />
-                <span>
-                  Over time, a bigger share of your revenue comes from{" "}
-                  <span className="font-semibold">email, WhatsApp and direct
-                  bookings</span>, not just OTAs.
-                </span>
-              </li>
-            </ul>
           </div>
 
-          {/* Right: Clickable comparison cards */}
-          <div className="space-y-4">
-            <div className="grid md:grid-cols-2 gap-4">
-              {/* COLUMN 1: Airbnb Only Host */}
-              <button
-                type="button"
-                onClick={() => setSelected("airbnb")}
-                className={`text-left transition-all duration-300 card bg-base-100 border ${
-                  selected === "airbnb"
-                    ? "border-error ring-2 ring-error/60 scale-[1.02]"
-                    : "border-base-300 hover:border-error/60 hover:scale-[1.01]"
-                }`}
-              >
-                <div className="card-body p-4 space-y-2">
-                  <h3 className="text-sm font-bold text-error">
-                    ❌ The &quot;Airbnb Only&quot; Host
-                  </h3>
-                  <ul className="text-xs space-y-1.5 text-base-content/80">
-                    <li>❌ Loses 15–20% of every booking to fees.</li>
-                    <li>
-                      ❌ Zero Data: Airbnb masks guest emails. You can&apos;t
-                      market to them again.
-                    </li>
-                    <li>
-                      ❌ Algorithm Risk: One bad review or shadow-ban kills your
-                      revenue overnight.
-                    </li>
-                    <li>
-                      ❌ Price Wars: You compete with 5,000 other listings on
-                      price alone.
-                    </li>
-                  </ul>
-                </div>
-              </button>
-
-              {/* COLUMN 2: Direct Booking Partner */}
-              <button
-                type="button"
-                onClick={() => setSelected("direct")}
-                className={`text-left transition-all duration-300 card bg-base-100 border ${
-                  selected === "direct"
-                    ? "border-success ring-2 ring-success/60 scale-[1.02]"
-                    : "border-base-300 hover:border-success/60 hover:scale-[1.01]"
-                }`}
-              >
-                <div className="card-body p-4 space-y-2">
-                  <h3 className="text-sm font-bold text-success">
-                    ✅ The &quot;Direct Booking&quot; Partner
-                  </h3>
-                  <ul className="text-xs space-y-1.5 text-base-content/80">
-                    <li>
-                      ✅ Keeps 100% of the revenue (minus ~3% credit card
-                      processing).
-                    </li>
-                    <li>
-                      ✅ Owns the Asset: You build an email list of thousands of
-                      past guests.
-                    </li>
-                    <li>
-                      ✅ Repeat Revenue: You send one email to fill a slow
-                      month—for free.
-                    </li>
-                    <li>
-                      ✅ Brand Authority: You compete on experience, not price.
-                    </li>
-                  </ul>
-                </div>
-              </button>
+          {/* Middle Divider */}
+          <div className="flex items-center justify-center">
+            <div className="flex flex-col items-center gap-2">
+              <div className="h-16 w-px bg-base-300 rounded-full" />
+              <div className="px-4 py-2 rounded-full border border-base-300 bg-base-100 text-xs font-semibold tracking-[0.2em] uppercase text-base-content/70">
+                vs
+              </div>
+              <div className="h-16 w-px bg-base-300 rounded-full" />
             </div>
+          </div>
 
-            {/* State-specific micro copy */}
-            <div className="text-[11px] md:text-xs text-base-content/70">
-              {selected === "airbnb" ? (
-                <p>
-                  If this is you today, our first goal is simple:{" "}
-                  <span className="font-semibold">
-                    set up one reliable direct booking channel
-                  </span>{" "}
-                  (website + email list) without hurting your Airbnb ranking.
+          {/* RIGHT CARD – Direct Booking */}
+          <div className="h-full flex">
+            <div className="relative flex-1 rounded-3xl bg-base-100 shadow-xl border border-base-300/80 p-6 md:p-7 flex flex-col gap-5 hover:shadow-2xl transition-shadow duration-300">
+              {/* Top gradient accent */}
+              <div className="pointer-events-none absolute -top-px left-6 h-1 w-28 bg-gradient-to-r from-purple-400 via-violet-400 to-fuchsia-400 rounded-full" />
+
+              {/* Label pill */}
+              <div className="inline-flex items-center gap-2 rounded-full bg-base-200 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-base-content/60">
+                <span className="h-2 w-2 rounded-full bg-purple-400" />
+                <span>After Direct Booking Partners</span>
+              </div>
+
+              {/* Title */}
+              <div className="space-y-1">
+                <h3 className="text-lg md:text-xl font-bold text-purple-500">
+                  Direct Booking Brand
+                </h3>
+                <p className="text-xs md:text-sm text-base-content/60">
+                  Owns demand, owns guest relationships and builds long-term
+                  leverage with every stay.
                 </p>
-              ) : (
-                <p>
-                  This is where we&apos;re heading: a property brand that{" "}
-                  <span className="font-semibold">
-                    uses Airbnb as a channel, not a crutch
-                  </span>
-                  , with guests who remember <em>your</em> name — not just the
-                  platform&apos;s.
+              </div>
+
+              {/* Bullet list */}
+              <ul className="list-disc list-inside space-y-2 text-sm text-base-content/80">
+                <li>Keeps ~97% of booking revenue.</li>
+                <li>Builds long-term guest email and WhatsApp lists.</li>
+                <li>Can drive repeat bookings on demand.</li>
+                <li>Competes on brand, not price.</li>
+              </ul>
+
+              {/* Profit bar */}
+              <div className="mt-auto pt-4 space-y-2">
+                <p className="text-xs font-semibold text-base-content/60">
+                  Profit kept on ₹1,00,000 in bookings
                 </p>
-              )}
+                <div className="h-3 rounded-full bg-base-content/10 overflow-hidden">
+                  <div className="h-full w-[97%] bg-purple-400" />
+                </div>
+                <div className="flex justify-between text-[11px] text-base-content/60">
+                  <span>Actual profit retained</span>
+                  <span>≈ 97%</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* CTA bar under section */}
-        <div className="pt-2 flex flex-wrap gap-3 items-center justify-between text-[11px] md:text-xs text-base-content/60">
-          <span>
-            On our strategy call, we&apos;ll show you exactly what it would take
-            to move from &quot;Airbnb Only&quot; to &quot;Direct Booking
-            Partner&quot; for your property.
-          </span>
-          <a href="#book-call" className="btn btn-primary btn-sm">
-            Map my direct booking plan →
-          </a>
+        {/* Sub-copy */}
+        <div className="text-center max-w-3xl mx-auto">
+          <p className="text-sm text-base-content/70">
+            We show you exactly how this transformation works during your
+            strategy call, using real numbers from your portfolio.
+          </p>
         </div>
       </div>
     </section>

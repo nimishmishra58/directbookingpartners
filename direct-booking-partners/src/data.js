@@ -1,10 +1,13 @@
 // src/data.js
 export const navLinks = [
-  { href: "#how-it-works", label: "How it works" },
-  { href: "#results", label: "Results" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#faq", label: "FAQ" },
+  { label: "Home", href: "#hero" },
+  { label: "Problems", href: "#problem" },
+  { label: "Comparison", href: "#comparison" },
+  { label: "How It Works", href: "#how-it-works" },
+  { label: "Results", href: "#results" },
+  { label: "FAQ", href: "#faq" },
 ];
+
 
 export const stats = [
   {

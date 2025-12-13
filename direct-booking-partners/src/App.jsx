@@ -1,23 +1,16 @@
 // src/App.jsx
 import React from "react";
 import "./index.css";
-import {
-  navLinks,
-  steps,
-  faqs,
-  caseStudies,
-} from "./data";
+import { navLinks, steps, faqs, caseStudies } from "./data";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import StatsSection from "./components/StatsSection";
-import ProblemSection from "./components/ProblemSection";
 import ResultsSection from "./components/ResultsSection";
-import TechStackSection from "./components/TechStackSection";
 import HowItWorksSection from "./components/HowItWorksSection";
-import BookingSection from "./components/BookingSection";
 import FAQSection from "./components/FAQSection";
 import Footer from "./components/Footer";
+import DependencySection from "./components/DependencySection";
+import ComparisonSection from "./components/ComparisonSection";
 
 const App = () => {
   return (
@@ -25,14 +18,12 @@ const App = () => {
       <Navbar navLinks={navLinks} />
       <main className="flex-1">
         <Hero />
-         <ProblemSection />
-          <HowItWorksSection steps={steps} />
-              <ResultsSection caseStudies={caseStudies} />
-              <TechStackSection />
-                  <FAQSection faqs={faqs} />
-        
-        <BookingSection />
-    
+        <DependencySection />
+        <ComparisonSection />
+        <HowItWorksSection steps={steps} />
+        <ResultsSection caseStudies={caseStudies} />
+        <FAQSection faqs={faqs} />
+
       </main>
       <Footer />
     </div>

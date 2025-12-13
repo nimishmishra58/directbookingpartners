@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="hero bg-base-100 py-10 lg:py-16 border-b border-base-200">
+    <section id="hero" className="hero bg-base-100 py-10 lg:py-16 border-b border-base-200 scroll-mt-24">
       <div className="hero-content max-w-6xl mx-auto px-4 flex-col gap-8">
         <div className="w-full space-y-5 text-left">
           <p className="text-[11px] md:text-xs font-semibold tracking-[0.18em] uppercase text-base-content/60">
@@ -29,8 +29,8 @@ const Hero = () => {
 
           <div className="flex flex-col gap-2">
             <div className="flex flex-wrap gap-3 items-center">
-              <a href="#book-call" className="btn btn-primary btn-lg text-white">
-                Apply for the Local Guide Protocol →
+              <a href="https://api.leadconnectorhq.com/widget/bookings/direct-booking-partners" target="_blank" className="btn btn-primary btn-lg text-white">
+                Book a strategy call →
               </a>
               <button
                 className="btn btn-ghost btn-sm md:btn-md"

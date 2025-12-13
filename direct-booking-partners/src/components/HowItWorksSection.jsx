@@ -2,7 +2,7 @@ import React from "react";
 
 const HowItWorksSection = ({ steps }) => {
   return (
-    <section id="how-it-works" className="py-14 lg:py-20 bg-base-200 border-b border-base-300">
+    <section id="how-it-works" className="py-14 lg:py-20 bg-base-200 border-b border-base-300 scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
           <h2 className="text-2xl md:text-3xl font-bold">

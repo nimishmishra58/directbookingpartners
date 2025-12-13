@@ -9,6 +9,7 @@ export default {
   },
   plugins: [daisyui],
   daisyui: {
-    themes: ["business", "dark"], // we can customise later
+    // order = priority; first is default if you don't override via data-theme
+    themes: ["light", "dark", "business"],
   },
 };

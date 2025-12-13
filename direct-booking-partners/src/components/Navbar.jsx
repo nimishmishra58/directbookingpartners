@@ -1,21 +1,18 @@
 // src/components/Navbar.jsx
-import React from "react";
-import Logo from "../assets/logo.png"
+import logoLight from "../assets/logo_light.png";
+import logoDark from "../assets/logo_dark.png";
 const Navbar = ({ navLinks }) => {
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50 border-b border-base-200">
       <div className="max-w-6xl mx-auto w-full px-4 flex items-center justify-between">
-       
-           <a href="#" className="flex items-center gap-3">
+        <picture>
+          <source srcSet={logoDark} media="(prefers-color-scheme: dark)" />
           <img
-            src={Logo}
-            alt="Direct Booking Partners Logo"
-            width={100}
-            height={100}
-            className="object-contain"
+            src={logoLight}
+            alt="Direct Booking Partners"
+            className="h-24 w-auto"
           />
-        </a>
-    
+        </picture>
 
         {/* Desktop Nav */}
         <div className="flex-none hidden md:flex items-center gap-4">
@@ -27,10 +24,11 @@ const Navbar = ({ navLinks }) => {
             ))}
           </ul>
           <div className="flex items-center gap-2">
-            <a href="#book-call" className="btn btn-ghost btn-sm">
-              Login
-            </a>
-            <a href="#book-call" className="btn btn-primary btn-sm text-white">
+            <a
+              href="https://api.leadconnectorhq.com/widget/bookings/direct-booking-partners"
+              target="_blank"
+              className="btn btn-primary btn-sm text-white"
+            >
               Book a strategy call
             </a>
           </div>
@@ -52,9 +50,7 @@ const Navbar = ({ navLinks }) => {
                 </li>
               ))}
               <div className="divider my-1" />
-              <li>
-                <a href="#book-call">Login</a>
-              </li>
+
               <li>
                 <a href="#book-call" className="font-semibold text-primary">
                   Book a strategy call
