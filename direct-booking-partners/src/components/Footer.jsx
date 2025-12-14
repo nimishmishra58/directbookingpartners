@@ -9,7 +9,7 @@ const Footer = () => {
           © {new Date().getFullYear()} Direct Booking Partners. All rights reserved.
         </p>
         <div className="flex gap-4">
-          <a href="#book-call" className="link link-hover">
+          <a href="https://api.leadconnectorhq.com/widget/bookings/direct-booking-partners" target="_blank" className="link link-hover">
             Book a call
           </a>
           <a href="#" className="link link-hover">

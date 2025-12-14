@@ -1,6 +1,6 @@
 // src/components/Navbar.jsx
-import logoLight from "../assets/logo_light.png";
-import logoDark from "../assets/logo_dark.png";
+import logoLight from "/assets/logo_light.png";
+import logoDark from "/assets/logo_dark.png";
 const Navbar = ({ navLinks }) => {
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50 border-b border-base-200">

@@ -1,9 +1,9 @@
 // src/components/ResultsSection.jsx
 import React from "react";
 
-import resultImg1 from "../assets/casestudy1.png";
-import resultImg2 from "../assets/casestudy2.png";
-import resultImg3 from "../assets/casestudy3.png";
+import resultImg1 from "/assets/casestudy1.png";
+import resultImg2 from "/assets/casestudy2.png";
+import resultImg3 from "/assets/casestudy3.png";
 
 const resultImages = [resultImg1, resultImg2, resultImg3];
 

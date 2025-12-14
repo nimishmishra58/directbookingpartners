@@ -1,5 +1,6 @@
 // src/components/DependencySection.jsx
 import React from "react";
+import DependencyIllustration from "/assets/dependency-illustration.png";
 
 const DependencySection = () => {
   return (
@@ -62,7 +63,7 @@ const DependencySection = () => {
         <div className="flex justify-center items-center">
           <div className="w-full max-w-md relative">
             <img
-              src="/src/assets/dependency-illustration.png"
+              src={DependencyIllustration}
               alt="Platform Dependency Illustration"
               className="w-full h-auto rounded-2xl shadow-2xl border border-base-300"
             />
