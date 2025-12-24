@@ -4,7 +4,7 @@ import Services from "./components/Services";
 import Footer from "./components/Footer";
 import Pricing from "./components/Pricing";
 import CTA from "./components/CTA";
-import HowItWorks from "./components/HowItWOrks";
+import HowItWorks from "./components/HowItWorks";
 import Testimonials from "./components/Testimonials";
 
 export default function App() {
