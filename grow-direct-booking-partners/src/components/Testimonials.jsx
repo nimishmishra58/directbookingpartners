@@ -123,37 +123,36 @@ export default function TestimonialSection() {
           ←
         </button>
 
-        {/* Cards Row */}
-        <div className="flex items-stretch justify-center gap-8 px-16">
+          {/* Cards Row */}
+          <div className="flex items-stretch justify-center gap-4 sm:gap-8 px-4 sm:px-8 md:px-16 overflow-visible">
           {[-1, 0, 1].map((offset) => {
             const t = safeTestimonials[getIndex(offset)];
             const isActive = offset === 0;
 
-            return (
-              <div
-                key={offset}
-                className={`
-                  w-[320px] h-[360px]
-                  flex flex-col justify-between
-                  rounded-3xl p-8
-                  bg-white dark:bg-[#141414]
-                  border border-gray-200 dark:border-gray-800
-                  shadow-lg
-                  text-center
-                  transition-all duration-500 ease-in-out
-                  ${
-                    isActive
-                      ? "scale-110 z-10"
-                      : "scale-100 opacity-70"
-                  }
-                `}
-              >
+              const hideOnMobile = offset !== 0 ? "hidden sm:flex" : "flex";
+
+              return (
+                <div
+                  key={offset}
+                  className={`
+                    ${hideOnMobile}
+                    w-full sm:w-[320px] max-w-[340px] h-auto min-h-[220px] sm:min-h-[260px]
+                    flex flex-col justify-between
+                    rounded-3xl p-6 sm:p-8
+                    bg-white dark:bg-[#141414]
+                    border border-gray-200 dark:border-gray-800
+                    shadow-lg
+                    text-center
+                    transition-all duration-500 ease-in-out
+                    ${isActive ? "scale-105 z-10" : "scale-95 opacity-70"}
+                  `}
+                >
                 <div>
                   <h3 className="text-lg font-semibold mb-4 text-black dark:text-white">
                     {t.title}
                   </h3>
 
-                  <p className="italic text-gray-700 dark:text-gray-400 text-sm leading-relaxed">
+                  <p className="italic text-gray-700 dark:text-gray-400 text-sm leading-relaxed whitespace-normal">
                     “{t.quote}”
                   </p>
                 </div>
@@ -188,6 +187,25 @@ export default function TestimonialSection() {
         >
           →
         </button>
+
+        {/* Mobile nav (visible on small screens) */}
+        <div className="mt-6 flex justify-center gap-4 md:hidden">
+          <button
+            onClick={prev}
+            aria-label="Previous testimonial"
+            className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
+          >
+            ←
+          </button>
+
+          <button
+            onClick={next}
+            aria-label="Next testimonial"
+            className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-700 text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
+          >
+            →
+          </button>
+        </div>
 
       </div>
     </section>
